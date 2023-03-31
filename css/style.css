@@ -35,5 +35,11 @@ body {
 
 .btn {
   background-color: #A4907C ;
-  padding: 5px;
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: #F1DEC9;
+}
+
+.btn:hover {
+  border-color: #C8B6A6;
 }
