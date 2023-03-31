@@ -1,0 +1,39 @@
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
+
+
+body {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 50vw;
+  background-color: black;
+}
+
+
+.container {
+  border-radius: 10px;
+  background-color: #F1DEC9;
+  max-width: 80%;
+  width: 700px;
+  height: 300px;
+  padding: 30px;
+}
+
+
+.btn-grid {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.btn {
+  background-color: #A4907C ;
+  padding: 5px;
+}
