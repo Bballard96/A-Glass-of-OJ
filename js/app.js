@@ -63,7 +63,7 @@ function selectOption(option) {
 const textNodes = [
   {
     id: 1,
-    text: 'You slowly begin to regain conciousness and awake from your drunk stupor. You arise from the floor and after rubbing your eyes and squinting intensely you realized your extremly parched. What do you grab to quinch your thirst. ',
+    text: 'You slowly begin to regain conciousness and awake from your drunk stupor. You arise from the floor and after rubbing your eyes and squinting intensely you realized your extremly parched. What do you grab to quinch your thirst? ',
     // FIRST STEP OPTIONS 1
     options: [
       {
@@ -160,8 +160,8 @@ const textNodes = [
     ]
   },
   {
-    id: 50,
-    text: ' You stumble around the room until you lose your footing and fall unto the floor, Only to have to start the day again maybe tomorrow and hope for a better outcome',
+    id: 50, /* First ENDING */
+    text: 'You stumble around the room until you lose your footing and fall unto the floor, Only to have to start the day again maybe tomorrow and hope for a better outcome',
     options: [
       {
         text: 'Restart',
@@ -172,35 +172,82 @@ const textNodes = [
   },
   {
     id: 4,
-    text: 'great time to leave the house and figure out where ',
+    text: "Great! Guess it's time to get going. Upon stepping outside you realize either the sun has exploded leaving everything shrouded in darkness or it's very late at night. There a few different paths you could take " ,
     options: [
       {
-      text: 'Walk North',
+      text: 'Walk East',
       nextText: 5
       },
       {
-        text: 'Walk East',
-        nextText: 5
+        text: 'Walk North',
+        nextText: 6
       },
       {
         text: 'Walk South',
-        nextText: 5
+        nextText: 7
+      }
+    ]
+  },
+  {
+    id: 4.1,
+    text: "There are a few different paths you could take " ,
+    options: [
+      {
+      text: 'Walk East',
+      nextText: 5
+      },
+      {
+        text: 'Walk North',
+        nextText: 6
+      },
+      {
+        text: 'Walk South',
+        nextText: 7
       }
     ]
   },
   {
     id: 5,
-    text: 'yes this is working',
+    text: "Ahead sits a large forest cloaked in darkness. Could maybe get through there but, will definitely need some kind of light" ,
     options: [
       {
-        text: ' test for OJ ',
-        requiredState: (currentState) => currentState.orangeJuice,
-        nextText: 1
+      text: 'Use flashlight',
+       requiredState: {flashlight: true},
+      nextText: 5
       },
       {
-        text: 'if we didnt drink oj this is all we see',
-        nextText: 1
-
+        text: 'Walk back to path',
+        nextText: 4.1
+      },
+    ]
+  },
+  {
+    id: 6,
+    text: 'You walk along the path for a minute or two before approaching what seems to be a pillar with a large handle',
+    options: [
+      {
+        text: ' pull handle?',
+        // requiredState: (currentState) => currentState.orangeJuice,
+        nextText: 6.1
+      },
+      {
+        text: "Don't touch the handle and head back to the path",
+        nextText: 4.1
+      }
+    ]
+  },
+  {
+    id: 6.1,
+    text: 'You pull the handle and reveal a compartment. Theres a flashlight inside! Do you take it?',
+    options: [
+      {
+        text: "I don't see why not",
+        setState: {flashlight: true},
+        nextText: 6.1
+      },
+      {
+        text: "Def not. Gonna go ahead and head back now",
+        nextText: 4.1
       }
     ]
   }
