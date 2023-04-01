@@ -36,7 +36,7 @@ function showTextNode(textNodeIndex) {
   while (optionButtonsElement.firstChild) {
     optionButtonsElement.removeChild(optionButtonsElement.firstChild)
   }
-  
+
 
   textNode.options.forEach(option => {
     if (showOption(option)) {
@@ -51,6 +51,7 @@ function showTextNode(textNodeIndex) {
 
 function showOption(option) {
   return option.requiredState == null || option.requiredState(state)
+  
 }
 
 function selectOption(option) {
