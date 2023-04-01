@@ -19,6 +19,7 @@ const optionButtonsElement = document.getElementById('option-buttons')
 /*----------------------------- Event Listeners -----------------------------*/
 
 
+
 /*-------------------------------- Functions --------------------------------*/
 // 3) Upon loading, the game state should be initialized, and a function should be 
 
@@ -35,6 +36,7 @@ function showTextNode(textNodeIndex) {
   while (optionButtonsElement.firstChild) {
     optionButtonsElement.removeChild(optionButtonsElement.firstChild)
   }
+  
 
   textNode.options.forEach(option => {
     if (showOption(option)) {
@@ -203,7 +205,7 @@ const textNodes = [
       {
         text: 'Walk South',
         nextText: 7
-      }
+      },
     ]
   },
   {
@@ -212,8 +214,8 @@ const textNodes = [
     options: [
       {
       text: 'Use flashlight',
-       requiredState: {flashlight: true},
-      nextText: 5
+      requiredState: (currentState) => currentState.flashLight,
+      nextText: 8
       },
       {
         text: 'Walk back to path',
@@ -242,15 +244,82 @@ const textNodes = [
     options: [
       {
         text: "I don't see why not",
-        setState: {flashlight: true},
-        nextText: 6.1
+        setState: {flashLight: true},
+        nextText: 4.1
       },
       {
         text: "Def not. Gonna go ahead and head back now",
         nextText: 4.1
       }
     ]
-  }
+  },
+  {
+    id: 7,
+    text: 'It looks like you stumble upon a small stream with something shiny just beneath the surface.',
+    options: [
+      {
+        text: "reach down and pick up whatever item this is.",
+        nextText: 7.2,
+      },
+      {
+        text: "Don't wanna take my chances on whatever else could be in that water. Gonna go ahead and turn around and head back to the path.",
+        nextText: 4.1
+      },
+      {
+        text: "Use your flashlight to light the water and stare at yourself before walking back to the path.",
+        requiredState: (currentState) => currentState.flashLight,
+        nextText: 4.1
+      },
+    ]
+  },
+  {
+    id: 7.2,
+    text: "It's a flask filled with your favorite bourbon. ",
+    options: [
+      {
+        text: "Drink every last drop of some strangers alcohol that we found at the bottom of this river. A great idea!",
+        nextText: 50.1
+      },
+      {
+        text: "Don't wanna take my chances on whatever else could be in that water. Gonna go ahead and turn around and head back to the path.",
+        nextText: 4.1
+      },
+    ]
+  },
+  {
+    id: 8,
+    text: "You start to walk through the forest using the flashlight to illuminate whats in front of you. Not too far ahead it seems you're approaching a building. ",
+    options: [
+      {
+        text: "approach building",
+        nextText: 9
+      },
+    ]
+  },
+  {
+    id: 9,
+    text: "You get closer ot the building and realize that there is music playing from the inside and it seems to be inhabited by others. ",
+    options: [
+      {
+        text: "Seems like I have no clue what this building is or who could possibly be inside so I guess I'll just let myself in and find the answers I so rightly deserve.",
+        nextText: 10
+      },
+      {
+        text: "Seems like I have no clue whatsoever what could be inside here It could possibly be a life threatening trap. Only way to find out is if I let myself in",
+        nextText: 10
+      },
+    ]
+  },
+  {
+    id: 50.1,
+    text: "You realize you've immediately gotten alcohol poisioning from the contents of the flask as your body shuts down and you fall face first into the stream",
+    options: [
+      {
+        text: "Restart",
+        nextText: 1
+      },
+    ]
+  },
 
 ]
 
