@@ -7,13 +7,15 @@
 // 1) Define the required variables used to track the state of the game
 
 let state = {}
-
+let itemIcon = document.getElementById("item-icon");
 
 /*------------------------ Cached Element References ------------------------*/
 // 2) Store cached element references
 const textElement = document.getElementById('text')
 const optionButtonsElement = document.getElementById('option-buttons')
-
+// const splashScreen = document.getElementById("introScreen")
+// const startButton = document.getElementById("StartButton")
+// const gameCanvas = document.getElementById("GameCanvas")
 
 
 /*----------------------------- Event Listeners -----------------------------*/
@@ -25,8 +27,13 @@ const optionButtonsElement = document.getElementById('option-buttons')
 
 // function startMenu() {
   
-// }
-
+// }'
+// startButton.addEventListener("click", function () {
+//   // Hide the splash screen and show the game canvas
+//   splashScreen.style.display = "none";
+//   gameCanvas.style.display = "block";
+// });
+/* START GAME */
 function startGame() {
   state = {}
   showTextNode(1)
@@ -54,6 +61,8 @@ function showTextNode(textNodeIndex) {
 
 function showOption(option) {
   return option.requiredState == null || option.requiredState(state)
+}
+function showIcon(icon) {
   
 }
 
@@ -66,6 +75,16 @@ function selectOption(option) {
   showTextNode(nextTextNodeId)
 }
 
+/* THIS IS CODE THATS BREAKING GAME  */
+// function changeBackground() {
+//   // var color = document.getElementById("mySelect").value;
+//   document.getElementById("background-Image").style.backgroundImage = url("assets/dark-forest.jpg");
+// }
+
+// document.getElementById("background-Image").addEventListener("change", changeBackground);
+/* */
+
+
 const textNodes = [
   {
     id: 1,
@@ -74,7 +93,8 @@ const textNodes = [
     options: [
       {
         text: 'Water.',
-        nextText: 2
+        nextText: 2,
+        // changeBackground(),
       },
       {
         text: 'Orange juice.',
@@ -101,7 +121,7 @@ const textNodes = [
       setState: {Cold: true },
       nextText: 2.7
     },
-    {
+    { 
       text: 'Pants and jacket.',
       nextText: 4
     }
@@ -323,9 +343,14 @@ const textNodes = [
         nextText: 10
       },
       {
-        text: "Let me get 12 shots of the strongest stuff you have",
+        text: "Let me get 12 shots of the strongest stuff you have.",
         nextText: 50.2
       },
+      {
+      text: "I'll just take some Oj. It's my favorite.",
+      requiredState: (currentState) => currentState.orangeJuice,
+      nextText: 60,
+      }
     ]
   },
   {
@@ -334,7 +359,7 @@ const textNodes = [
     options: [
       {
         text: "You Lose. Restart.",
-        nextText: 1
+        nextText: -1
       },
     ]
   },
@@ -344,7 +369,17 @@ const textNodes = [
     options: [
       {
         text: "You Lose. Restart",
-        nextText: 1
+        nextText: -1
+      },
+    ]
+  },
+  {
+    id: 60,
+    text: "A glass of Oj",
+    options: [
+      {
+        text: "You Win! Restart",
+        nextText: -1
       },
     ]
   },
