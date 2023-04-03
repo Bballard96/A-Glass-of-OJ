@@ -13,20 +13,22 @@ let introOverlay = document.getElementById("intro-overlay");
 let startButton = document.getElementById("start-button");
 let gameContainer = document.getElementById("game-container");
 
+// let statetoBackgroundMap = {
+//   'state1': "url('../assets/XDjgmZ.png')",
+//   'state2': "url('../assets/dark-forest.jpg')",
+//   'state3': "url('../assets/stream-pic.png')",
+//   'state4': "url('../assets/bar-pic.png')"
+// }
 
-let myDiv = document.querySelector("style");
-myDiv.style.backgroundImage = "url('dark-forest.jpg')";
-function changeBackground(url){
-	document.getElementById('newPic1').innerHTML="background-image: url('assets/dark-forest.jpg')";
-	document.getElementById('newPic3').style.backgroundImage="url('assets/dark-forest.jpg')";
-	document.getElementById('newPic4').style.backgroundSize="cover";
-}
+let backgroundState = {}
 
 /* START SCREEN */
 startButton.addEventListener("click", function() {
   introOverlay.style.display = "none";
   gameContainer.style.display = "block";
 });
+
+
 
 
 /*------------------------ Cached Element References ------------------------*/
@@ -54,6 +56,8 @@ const optionButtonsElement = document.getElementById('option-buttons')
     function startGame() {
       state = {}
       showTextNode(1)
+      backgroundState = document.body.style.backgroundImage = "url('../assets/XDjgmZ.png')";
+      // iconState = document.body.style = "url('../assets/backpackFav.ico')";
     }
 
     // function changeBackground() {
@@ -61,9 +65,23 @@ const optionButtonsElement = document.getElementById('option-buttons')
     //     background-image: url("assets/dark-forest.jpg")
     //   }
     // }
-    function changeImage(fileName) {
-      let img = document.querySelector("background-image");
-      img.setAttribute("url", fileName)
+    // function changeImage(fileName) {
+    //   let img = document.querySelector("game-container");
+    //   img.setAttribute("url", fileName)
+    // }
+    // document.body.style.backgroundImage = "url('../assets/XDjgmZ.png')"
+    // document.body.style.backgroundImage = "url('../assets/dark-forest.jpg')"
+    // document.body.style.backgroundImage = "url('../assets/stream-pic.png')"
+    // document.body.style.backgroundImage = "url('../assets/bar-pic.png')"
+
+
+    // function changeBackground(option) {
+    //   if (textNodes.index === 1) {
+    //     gameState = 'state1'
+    //   }
+    // }
+    function backgroundForest() {
+      backgroundState = document.body.style.backgroundImage = "url('../assets/dark-forest.jpg')";
     }
     
     function showTextNode(textNodeIndex) {
@@ -124,10 +142,8 @@ const textNodes = [
     options: [
       {
         text: 'Water.',
-        // setState: {url("assets/dark-forest.jpg": true)}
         nextText: 2,
-        // onclick="changeImage("dark-forest.jpg")",
-        // changeBackground(),
+        // setState: {backgroundState: "url('../assets/stream-pic.png')"}
       },
       {
         text: 'Orange juice.',
@@ -143,6 +159,7 @@ const textNodes = [
   // STEP 2
   {
     id: 2 /*FIRST TIME COMING TO STEP 2 WITH OJ*/,
+    // document.body.style.backgroundImage = "url('../assets/stream-pic.png')",
     text: "Ah refreshing! Guessing you should get up, get out and see if you can retrace your steps. It Looks like your still in your clothes from yesterday. You should shower and put on something new what'll it be?",
     options: [ 
       {
@@ -156,7 +173,7 @@ const textNodes = [
     },
     { 
       text: 'Pants and jacket.',
-      nextText: 4
+      nextText: 4,
     }
     ]
   },
