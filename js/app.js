@@ -9,13 +9,25 @@
 let state = {}
 let itemIcon = document.getElementById("item-icon");
 
+var introOverlay = document.getElementById("intro-overlay");
+var startButton = document.getElementById("start-button");
+var gameContainer = document.getElementById("game-container");
+
+const optionSays = new Audio("/Users/brendanballard/code/projects/CYOA/audio/Melody.mp3")
+
+
+startButton.addEventListener("click", function() {
+  introOverlay.style.display = "none";
+  gameContainer.style.display = "block";
+  // Start your game code here
+});
+
+
 /*------------------------ Cached Element References ------------------------*/
 // 2) Store cached element references
 const textElement = document.getElementById('text')
 const optionButtonsElement = document.getElementById('option-buttons')
-// const splashScreen = document.getElementById("introScreen")
-// const startButton = document.getElementById("StartButton")
-// const gameCanvas = document.getElementById("GameCanvas")
+
 
 
 /*----------------------------- Event Listeners -----------------------------*/
@@ -27,58 +39,63 @@ const optionButtonsElement = document.getElementById('option-buttons')
 
 // function startMenu() {
   
-// }'
-// startButton.addEventListener("click", function () {
-//   // Hide the splash screen and show the game canvas
-//   splashScreen.style.display = "none";
-//   gameCanvas.style.display = "block";
-// });
-/* START GAME */
-function startGame() {
-  state = {}
-  showTextNode(1)
-}
-
-
-function showTextNode(textNodeIndex) {
-  const textNode = textNodes.find(textNode => textNode.id === textNodeIndex)
-  textElement.innerText = textNode.text
-  while (optionButtonsElement.firstChild) {
-    optionButtonsElement.removeChild(optionButtonsElement.firstChild)
-  }
-
-
-  textNode.options.forEach(option => {
-    if (showOption(option)) {
-      const button = document.createElement('button')
-      button.innerText = option.text
-      button.classList.add('btn')
-      button.addEventListener('click', () => selectOption(option))
-      optionButtonsElement.appendChild(button)
+  // }'
+  // startButton.addEventListener("click", function () {
+    //   // Hide the splash screen and show the game canvas
+    //   splashScreen.style.display = "none";
+    //   gameCanvas.style.display = "block";
+    // });
+    /* START GAME */
+    function startGame() {
+      state = {}
+      showTextNode(1)
     }
-  })
-}
-
-function showOption(option) {
-  return option.requiredState == null || option.requiredState(state)
-}
-function showIcon(icon) {
-  
-}
-
-function selectOption(option) {
-  const nextTextNodeId = option.nextText 
-  if (nextTextNodeId === -1){
-    startGame()
-  }
-  state = Object.assign(state, option.setState)
-  showTextNode(nextTextNodeId)
-}
-
-/* THIS IS CODE THATS BREAKING GAME  */
-// function changeBackground() {
-//   // var color = document.getElementById("mySelect").value;
-//   document.getElementById("background-Image").style.backgroundImage = url("assets/dark-forest.jpg");
+    
+    
+    function showTextNode(textNodeIndex) {
+      const textNode = textNodes.find(textNode => textNode.id === textNodeIndex)
+      textElement.innerText = textNode.text
+      while (optionButtonsElement.firstChild) {
+        optionButtonsElement.removeChild(optionButtonsElement.firstChild)
+      }
+      
+      
+      textNode.options.forEach(option => {
+        if (showOption(option)) {
+          const button = document.createElement('button')
+          button.innerText = option.text
+          button.classList.add('btn')
+          button.addEventListener('click', () => selectOption(option))
+          optionButtonsElement.appendChild(button)
+        }
+      })
+    }
+    
+    function showOption(option) {
+      return option.requiredState == null || option.requiredState(state)
+    }
+    // function showIcon(icon) {
+      
+      // }
+      
+      function selectOption(option) {
+        const nextTextNodeId = option.nextText 
+        if (nextTextNodeId === -1){
+          startGame()
+        }
+        state = Object.assign(state, option.setState)
+        showTextNode(nextTextNodeId)
+      }
+      
+      
+      optionButtonsElement.addEventListener('click', function(evt) {
+      optionSays.volume = .05;
+      optionSays.play
+      })
+      /* THIS IS CODE THATS BREAKING GAME  */
+      // function changeBackground() {
+        //   // var color = document.getElementById("mySelect").value;
+        //   document.getElementById("background-Image").style.backgroundImage = url("assets/dark-forest.jpg");
 // }
 
 // document.getElementById("background-Image").addEventListener("change", changeBackground);
@@ -88,7 +105,7 @@ function selectOption(option) {
 const textNodes = [
   {
     id: 1,
-    text: "You slowly begin to regain consciousness and awake from your drunken stupor. You arise from the floor, and after rubbing your eyes and squinting intensely, you realize you're very parch. What do you grab to quench your thirst?",
+    text: "You slowly begin to regain consciousness and awake from your drunken stupor. You arise from the floor, and after rubbing your eyes and squinting intensely, you immediately pat all of your pockets naturally and realize you've lost your wallet. You need to find it before it's too late. You also realize your very parch. For the moment this takes priority. What do you grab to quench your thirst?",
     // FIRST STEP OPTIONS 1
     options: [
       {
@@ -110,7 +127,7 @@ const textNodes = [
   // STEP 2
   {
     id: 2 /*FIRST TIME COMING TO STEP 2 WITH OJ*/,
-    text: "Ah refreshing! Guessing we should get up, get out and see where the day takes us. It Looks like we're still in our clothes from yesterday. You should shower and put on something new what'll it be?",
+    text: "Ah refreshing! Guessing you should get up, get out and see if you can retrace your steps. It Looks like your still in your clothes from yesterday. You should shower and put on something new what'll it be?",
     options: [ 
       {
       text: 'Check weather by stepping outside first.',
@@ -129,7 +146,7 @@ const textNodes = [
   },
   {
     id: 2.2 /*FIRST TIME COMING TO STEP 2*/,
-    text: "Ah refreshing! You can never go wrong with some good ol' Oj. Guessing we should get up, get out and see where the day will take us, although it looks like we're still in our clothes from yesterday. You should shower and put on something new what'll it be?",
+    text: "Ah refreshing! You can never go wrong with some good ol' Oj. Guessing you should get up, get out and see if you can retrace your steps, although it looks like you're still in your clothes from yesterday. You should shower and put on something new what'll it be?",
     options: [ 
       {
       text: 'Check weather by stepping outside first.',
@@ -234,7 +251,7 @@ const textNodes = [
   },
   {
     id: 5,
-    text: "Ahead sits a large forest cloaked in darkness. You could maybe get through, but you will need some light." ,
+    text: "Ahead sits a large forest cloaked in darkness. You recognize this forest. You could maybe get through, but you will need some light." ,
     options: [
       {
       text: 'Use a flashlight to illuminate the path ahead and proceed down.',
@@ -322,35 +339,55 @@ const textNodes = [
   },
   {
     id: 9,
-    text: "You get closer to the building and realize there is music playing from the inside, and it looks like there could be others inside.",
+    text: "You get closer to the building and realize there is music playing from the inside, and it looks like there could be others inside. ",
     options: [
       {
-        text: "It seems like I have no clue what this building is or who could be inside, so I guess I'll just let myself in and find the answers I rightly deserve.",
+        text: "My wallet could be in here. I'll go inside and check it out.",
         nextText: 10
       },
       {
-        text: "It seems as though I have no clue what could be inside could be a life-threatening trap. The only way to find out is if I let myself in.",
+        text: "My wallet is definetly in there! I'll grab it real quick and be on my way.",
         nextText: 10
       },
     ]
   },
   {
     id: 10,
-    text: `You step inside, and it seems we've arrived at a bar. We approach the bar to sit down. The bartender turns around, and as he's cleaning a glass, he turns to ask: "what'll it be today for you?"`,
+    text: `You step inside, and it seems we've arrived at a bar. We approach the bar to sit down. It's all coming back to you now! The bartender turns around, notices you, and as he's cleaning his glass, stops and says: "Hey I recognize you! You left your wallet last night."`,
     options: [
       {
-        text: "I'll have a glass of water.",
-        nextText: 10
+        text: `*Grab Wallet*`,
+        nextText: 11
+      },
+    ]
+  },
+  {
+    id: 11,
+    text: `"Look We can't have another night like last night so take it easy today if you are thinking about drinking. What'll it be?"`,
+    options: [
+      {
+        text: `Take his advice to heart. "You're right. I'll just have a glass of water and be on my way."`,
+        nextText: 12
       },
       {
-        text: "Let me get 12 shots of the strongest stuff you have.",
+        text: "You're not my dad! Let me get 12 shots of the strongest stuff you have.",
         nextText: 50.2
       },
       {
-      text: "I'll just take some Oj. It's my favorite.",
+      text: "Yeah you're right. I actually just had some orange juice this morning still working on getting rid of this hangover. I'll just take a glass of Oj. It's my favorite.",
       requiredState: (currentState) => currentState.orangeJuice,
       nextText: 60,
       }
+    ]
+  },
+  {
+    id: 12,
+    text: "You have proven yourself to be very responsible and mature with this decision. Great job",
+    options: [
+      {
+        text: "You Win! Restart.",
+        nextText: -1
+      },
     ]
   },
   {
@@ -365,7 +402,7 @@ const textNodes = [
   },
   {
     id: 50.2,
-    text: "As everything begins to get fuzzy and you leave it up to the bar staff and ongoers to decide how they're going to get rid of you once you collapse after taking one too many drinks you realize you have failed yourself and everyone around you by falling to the temptations of liquor once again. ",
+    text: "As everything begins to get fuzzy and you leave it up to the bar staff and ongoers to decide how they're going to get rid of you once again. Right before you collapse after taking one too many drinks you realize you have failed yourself and everyone around you by falling to the temptations of liquor once again and leaving your wallet on the bar counter. ",
     options: [
       {
         text: "You Lose. Restart",
@@ -375,7 +412,7 @@ const textNodes = [
   },
   {
     id: 60,
-    text: "A glass of Oj",
+    text: "A glass of Oj. Can never go wrong.",
     options: [
       {
         text: "You Win! Restart",
