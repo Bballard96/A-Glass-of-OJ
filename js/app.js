@@ -1,19 +1,26 @@
 /*-------------------------------- Constants --------------------------------*/
-// 5) Define the required constants
+
 
 
 
 /*---------------------------- Variables (state) ----------------------------*/
-// 1) Define the required variables used to track the state of the game
+
 
 let state = {}
 let itemIcon = document.getElementById("item-icon");
 
-var introOverlay = document.getElementById("intro-overlay");
-var startButton = document.getElementById("start-button");
-var gameContainer = document.getElementById("game-container");
+let introOverlay = document.getElementById("intro-overlay");
+let startButton = document.getElementById("start-button");
+let gameContainer = document.getElementById("game-container");
 
-const optionSays = new Audio("/Users/brendanballard/code/projects/CYOA/audio/Melody.mp3")
+
+let myDiv = document.querySelector("style");
+myDiv.style.backgroundImage = "url('dark-forest.jpg')";
+function changeBackground(url){
+	document.getElementById('newPic1').innerHTML="background-image: url('assets/dark-forest.jpg')";
+	document.getElementById('newPic3').style.backgroundImage="url('assets/dark-forest.jpg')";
+	document.getElementById('newPic4').style.backgroundSize="cover";
+}
 
 /* START SCREEN */
 startButton.addEventListener("click", function() {
@@ -23,7 +30,7 @@ startButton.addEventListener("click", function() {
 
 
 /*------------------------ Cached Element References ------------------------*/
-// 2) Store cached element references
+
 const textElement = document.getElementById('text')
 const optionButtonsElement = document.getElementById('option-buttons')
 
@@ -34,13 +41,12 @@ const optionButtonsElement = document.getElementById('option-buttons')
 
 
 /*-------------------------------- Functions --------------------------------*/
-// 3) Upon loading, the game state should be initialized, and a function should be 
+
 
 // function startMenu() {
   
   // }'
   // startButton.addEventListener("click", function () {
-    //   // Hide the splash screen and show the game canvas
     //   splashScreen.style.display = "none";
     //   gameCanvas.style.display = "block";
     // });
@@ -49,7 +55,16 @@ const optionButtonsElement = document.getElementById('option-buttons')
       state = {}
       showTextNode(1)
     }
-    
+
+    // function changeBackground() {
+    //   if (text >= 4) {
+    //     background-image: url("assets/dark-forest.jpg")
+    //   }
+    // }
+    function changeImage(fileName) {
+      let img = document.querySelector("background-image");
+      img.setAttribute("url", fileName)
+    }
     
     function showTextNode(textNodeIndex) {
       const textNode = textNodes.find(textNode => textNode.id === textNodeIndex)
@@ -109,7 +124,9 @@ const textNodes = [
     options: [
       {
         text: 'Water.',
+        // setState: {url("assets/dark-forest.jpg": true)}
         nextText: 2,
+        // onclick="changeImage("dark-forest.jpg")",
         // changeBackground(),
       },
       {
