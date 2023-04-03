@@ -13,6 +13,11 @@
   left: 0;
 }
 
+/* #icon-grid {
+  display: flex;
+  height: 50px;
+} */
+
 body {
   padding: 0;
   margin: 0;

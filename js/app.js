@@ -13,6 +13,9 @@ let introOverlay = document.getElementById("intro-overlay");
 let startButton = document.getElementById("start-button");
 let gameContainer = document.getElementById("game-container");
 
+// const buttonPress = document.querySelector("button");
+// const buttonSays = new Audio("../audio/skill.mp3");
+
 // let statetoBackgroundMap = {
 //   'state1': "url('../assets/XDjgmZ.png')",
 //   'state2': "url('../assets/dark-forest.jpg')",
@@ -28,6 +31,11 @@ startButton.addEventListener("click", function() {
   gameContainer.style.display = "block";
 });
 
+// buttonPress.addEventListener("click", function(evt){
+//   console.log(evt.target)
+//     // buttonSays.volume = 5
+//     // buttonSays.play()
+// })
 
 
 
@@ -80,9 +88,6 @@ const optionButtonsElement = document.getElementById('option-buttons')
     //     gameState = 'state1'
     //   }
     // }
-    function backgroundForest() {
-      backgroundState = document.body.style.backgroundImage = "url('../assets/dark-forest.jpg')";
-    }
     
     function showTextNode(textNodeIndex) {
       const textNode = textNodes.find(textNode => textNode.id === textNodeIndex)
@@ -120,17 +125,12 @@ const optionButtonsElement = document.getElementById('option-buttons')
       }
       
       
-      // optionButtonsElement.addEventListener('click', function(evt) {
-      // optionSays.volume = .05;
-      // optionSays.play
-      // })
+
       /* THIS IS CODE THATS BREAKING GAME  */
       // function changeBackground() {
         //   // var color = document.getElementById("mySelect").value;
         //   document.getElementById("background-Image").style.backgroundImage = url("assets/dark-forest.jpg");
 // }
-
-// document.getElementById("background-Image").addEventListener("change", changeBackground);
 /* */
 
 
