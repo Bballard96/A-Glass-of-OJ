@@ -15,11 +15,10 @@ var gameContainer = document.getElementById("game-container");
 
 const optionSays = new Audio("/Users/brendanballard/code/projects/CYOA/audio/Melody.mp3")
 
-
+/* START SCREEN */
 startButton.addEventListener("click", function() {
   introOverlay.style.display = "none";
   gameContainer.style.display = "block";
-  // Start your game code here
 });
 
 
@@ -88,10 +87,10 @@ const optionButtonsElement = document.getElementById('option-buttons')
       }
       
       
-      optionButtonsElement.addEventListener('click', function(evt) {
-      optionSays.volume = .05;
-      optionSays.play
-      })
+      // optionButtonsElement.addEventListener('click', function(evt) {
+      // optionSays.volume = .05;
+      // optionSays.play
+      // })
       /* THIS IS CODE THATS BREAKING GAME  */
       // function changeBackground() {
         //   // var color = document.getElementById("mySelect").value;
