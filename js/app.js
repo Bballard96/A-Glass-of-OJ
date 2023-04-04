@@ -5,128 +5,64 @@
 
 /*---------------------------- Variables (state) ----------------------------*/
 
-
 let state = {}
 let itemIcon = document.getElementById("item-icon");
-
 let introOverlay = document.getElementById("intro-overlay");
 let startButton = document.getElementById("start-button");
 let gameContainer = document.getElementById("game-container");
-
 const playButton = document.getElementById('.btn')
 const startSound = document.getElementById("StartButton")
 const startNoise = new Audio("../audio/startGame.mp3")
-
 const optionSound = document.querySelector(".btn")
 const optionNoise = new Audio("../audio/skill.mp3")
 
 // const forestButton = document.getElementById("forest")
-  
-  let backgroundState 
-  
-  /* START SCREEN */
-  startButton.addEventListener("click", function() {
-    introOverlay.style.display = "none";
-    gameContainer.style.display = "block";
-    startNoise.volume = .2
-    startNoise.play()
-  });
+let backgroundState 
 
-//   forestButton.addEventListener("click", function() {
-//     if (textNodes[1].id === 1) { 
-//       backgroundState = document.body.style.backgroundImage = "url('../assets/dark-forest.jpg')"
-//     }
-//  })
 
-  // startGame()
-  
-  // buttonPress.addEventListener("click", function(evt){
-    //   console.log(evt.target)
-    //     // buttonSays.volume = 5
-    //     // buttonSays.play()
-    // })
-    
-    
-    
-    /*------------------------ Cached Element References ------------------------*/
-    
-    const textElement = document.getElementById('text')
-    const optionButtonsElement = document.getElementById('option-buttons')
-    
-    
-    /*----------------------------- Event Listeners -----------------------------*/
-    // notButtonDiv.addEventListener("click", evt => {
-      //   if (evt.target.id !== "not-fox") {
-        //     const audioElement = new Audio(`${evt.target.id}.mp3`)
-        //     audioElement.volume = .05
-        //     audioElement.play()
-        //   }
-        // })
-        // button.addEventListener()
-        
-        /*-------------------------------- Functions --------------------------------*/
-        
-        
-        // function startMenu() {
-          
-          // }'
-          // startButton.addEventListener("click", function () {
-            //   splashScreen.style.display = "none";
-            //   gameCanvas.style.display = "block";
-            // });
-            /* START GAME */
-            function startGame() {
-              state = {}
-              showTextNode(1)
-              backgroundState = document.body.style.backgroundImage = "url('../assets/XDjgmZ.png')";
-              // iconState = document.body.style = "url('../assets/backpackFav.ico')";
-            }
-            // function swapBackground() {
-            //   if (textNodes[9].styling === 'forest') {
-            //     backgroundState = document.body.style.backgroundImage = "url('../assets/dark-forest.jpg')"}
-            //     else if (styling === 'stream') {
-            //       backgroundState = document.body.style.backgroundImage = "url('../assets/stream-pic.png')"
-            //     }
-            //   }
-              // swapBackground()
-              // function changeBackground() {
-                //   if (text >= 4) {
-                  //     background-image: url("assets/dark-forest.jpg")
-                  //   }
-                  // }
-                  // function changeImage(fileName) {
-                    //   let img = document.querySelector("game-container");
-                    //   img.setAttribute("url", fileName)
-                    // }
-                    // document.body.style.backgroundImage = "url('../assets/XDjgmZ.png')"
-                    // document.body.style.backgroundImage = "url('../assets/dark-forest.jpg')"
-                    // document.body.style.backgroundImage = "url('../assets/stream-pic.png')"
-                    // document.body.style.backgroundImage = "url('../assets/bar-pic.png')"
-                        function showTextNode(textNodeIndex) {
-                          const textNode = textNodes.find(textNode => textNode.id === textNodeIndex)
-                          textElement.innerText = textNode.text
-                          while (optionButtonsElement.firstChild) {
-                            optionButtonsElement.removeChild(optionButtonsElement.firstChild)
+startButton.addEventListener("click", function() {
+  introOverlay.style.display = "none";
+  gameContainer.style.display = "block";
+  startNoise.volume = .2
+  startNoise.play()
+})
+/*------------------------ Cached Element References ------------------------*/
+const textElement = document.getElementById('text')
+const optionButtonsElement = document.getElementById('option-buttons')
+/*----------------------------- Event Listeners -----------------------------*/
+/*-------------------------------- Functions --------------------------------*/
+/* START GAME */
+function startGame() {
+state = {}
+showTextNode(1)
+backgroundState = document.body.style.backgroundImage = "url('../assets/XDjgmZ.png')";
+// iconState = document.body.style = "url('../assets/backpackFav.ico')";
+}
+// document.body.style.backgroundImage = "url('../assets/XDjgmZ.png')"
+// document.body.style.backgroundImage = "url('../assets/dark-forest.jpg')"
+// document.body.style.backgroundImage = "url('../assets/stream-pic.png')"
+// document.body.style.backgroundImage = "url('../assets/bar-pic.png')"
+                      function showTextNode(textNodeIndex) {
+                        const textNode = textNodes.find(textNode => textNode.id === textNodeIndex)
+                        textElement.innerText = textNode.text
+                        while (optionButtonsElement.firstChild) {
+                          optionButtonsElement.removeChild(optionButtonsElement.firstChild)
+                        }
+                        textNode.options.forEach(option => {
+                          if (showOption(option)) {
+                            const button = document.createElement('button')
+                            button.innerText = option.text
+                            button.classList.add('btn')
+                            button.addEventListener('click', () => selectOption(option))
+                            optionButtonsElement.appendChild(button)
                           }
-                          
-                          
-                          textNode.options.forEach(option => {
-                            if (showOption(option)) {
-                              const button = document.createElement('button')
-                              button.innerText = option.text
-                              button.classList.add('btn')
-                              button.addEventListener('click', () => selectOption(option))
-                              optionButtonsElement.appendChild(button)
-                            }
-                          })
+                        })
                         }
                         function showOption(option) {
                           return option.requiredState == null || option.requiredState(state)
                         }
     // function showIcon(icon) {
-      
       // }
-      
       function selectOption(option) {
         const nextTextNodeId = option.nextText 
         if (nextTextNodeId === -1){
@@ -138,22 +74,19 @@ const optionNoise = new Audio("../audio/skill.mp3")
         optionNoise.play()
       }
 
-      /* THIS IS CODE THATS BREAKING GAME  */
-      // function changeBackground() {
-        //   // var color = document.getElementById("mySelect").value;
-        //   document.getElementById("background-Image").style.backgroundImage = url("assets/dark-forest.jpg");
-// }
-/* */
+// optionButtonsElement.addEventListener("click", function() {
+//   if (textNodes[i].id > 4) {
+//     backgroundState = document.body.style.backgroundImage = "url('../assets/dark-forest.jpg')"
+//   }
+// })
 const textNodes = [
-  {
+{
     id: 1,
     text: "You slowly begin to regain consciousness and awake from your drunken stupor. You arise from the floor, and after rubbing your eyes and squinting intensely, you immediately pat all of your pockets naturally and realize you've lost your wallet. You need to find it before it's too late. You also realize your very parch. For the moment this takes priority. What do you grab to quench your thirst?",
-    // FIRST STEP OPTIONS 1
     options: [
       {
         text: 'Water.',
         nextText: 2,
-        // setState: {backgroundState: "url('../assets/stream-pic.png')"}
       },
       {
         text: 'Orange juice.',
@@ -294,7 +227,7 @@ const textNodes = [
   },
   {
     id: 5,
-    styling: 'forest',
+
     text: "Ahead sits a large forest cloaked in darkness. You recognize this forest. You could maybe get through, but you will need some light." ,
     options: [
       {
@@ -455,7 +388,7 @@ const textNodes = [
       },
     ]
   },
-  {
+{
     id: 60,
     text: "A glass of Oj. Can never go wrong.",
     options: [
@@ -467,7 +400,4 @@ const textNodes = [
   },
 
 ]
-
 startGame()
-
-// requiredState: (currentState) => currentState.orangeJuice,

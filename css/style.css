@@ -12,12 +12,6 @@
   top: 0;
   left: 0;
 }
-
-/* #icon-grid {
-  display: flex;
-  height: 50px;
-} */
-
 body {
   padding: 0;
   margin: 0;
@@ -31,17 +25,6 @@ body {
   -webkit-transition-property: box-shadow, transform;
   transition-property: box-shadow, transform;
 }
-
-
-/* #styleBg {
-  background-image: url("assets/XDjgmZ.png");
-} */
-
-/* #item-icon {
-  display: contents;
-  size: 50%;
-  background-color: purple;
-} */
 
 .container {
   border-radius: 10px;
@@ -120,7 +103,7 @@ body {
   z-index: 9999;
 }
 
- #intro-overlay h1 {
+#intro-overlay h1 {
   color: white;
   font-size: 3em;
   margin-bottom: 1em;
@@ -136,3 +119,49 @@ body {
   border-radius: 50px;
 }
 
+/* #start-button:hover, #start-button:focus, #start-button:active {
+  border-color: #C8B6A6;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  -webbkit-transform: scale(1.1);
+  transform: scale(1.1);
+}  */
+
+
+#start-button {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+#start-button a {
+  position: relative;
+  left: 0;
+  transition: all .35s ease-Out;
+}
+
+#start-button {
+  width: 100%;
+  height: 100%;
+  background: #BFC0C0;
+  left: -200px;
+  position: absolute;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .35s ease-Out;
+  bottom: 0;
+}
+
+#start-button img {
+  width: 20px;
+  height: auto;
+}
+
+#start-button:hover #start-button {
+  left: 0;
+}
+
+#start-button:hover a {
+  left: 150px;
+}
