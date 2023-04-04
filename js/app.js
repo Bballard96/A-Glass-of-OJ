@@ -19,6 +19,8 @@ const startNoise = new Audio("../audio/startGame.mp3")
 
 const optionSound = document.querySelector(".btn")
 const optionNoise = new Audio("../audio/skill.mp3")
+
+// const forestButton = document.getElementById("forest")
   
   let backgroundState 
   
@@ -26,9 +28,15 @@ const optionNoise = new Audio("../audio/skill.mp3")
   startButton.addEventListener("click", function() {
     introOverlay.style.display = "none";
     gameContainer.style.display = "block";
-    startNoise.volume = .5
+    startNoise.volume = .2
     startNoise.play()
   });
+
+//   forestButton.addEventListener("click", function() {
+//     if (textNodes[1].id === 1) { 
+//       backgroundState = document.body.style.backgroundImage = "url('../assets/dark-forest.jpg')"
+//     }
+//  })
 
   // startGame()
   
@@ -73,9 +81,6 @@ const optionNoise = new Audio("../audio/skill.mp3")
               backgroundState = document.body.style.backgroundImage = "url('../assets/XDjgmZ.png')";
               // iconState = document.body.style = "url('../assets/backpackFav.ico')";
             }
-            
-            
-            
             // function swapBackground() {
             //   if (textNodes[9].styling === 'forest') {
             //     backgroundState = document.body.style.backgroundImage = "url('../assets/dark-forest.jpg')"}
