@@ -99,7 +99,13 @@ body {
   size: 50px;
 } */
 
-/* #intro-overlay {
+/* #text {
+  display: inline-block;
+  animation: animate__animated animate__slideInDown;
+  animation: 2s;
+} */
+
+#intro-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -128,5 +134,5 @@ body {
   border: none;
   cursor: pointer;
   border-radius: 50px;
-} */
+}
 
