@@ -78,6 +78,11 @@ body {
   -webbkit-transform: scale(1.1);
   transform: scale(1.1);
 }
+
+#ojFav {
+  height: 20px;
+  width: 25px;
+}
 /* .flashlight {
   size: 50px;
 } */
@@ -119,15 +124,15 @@ body {
   border-radius: 50px;
 }
 
-/* #start-button:hover, #start-button:focus, #start-button:active {
+#start-button:hover, #start-button:focus, #start-button:active {
   border-color: #C8B6A6;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   -webbkit-transform: scale(1.1);
   transform: scale(1.1);
-}  */
+} 
 
 
-#start-button {
+/* #start-button {
   position: relative;
   overflow: hidden;
   cursor: pointer;
@@ -164,4 +169,4 @@ body {
 
 #start-button:hover a {
   left: 150px;
-}
+} */
