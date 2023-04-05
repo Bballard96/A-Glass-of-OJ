@@ -146,8 +146,14 @@ body {
   left: 150px;
 }
 
-@media (max-width: 600px) {
-  body {
-    font-size: 14px;
+@media (max-width: 900px) {
+  #text {
+    font-size: 15px;
+
   }
+}
+@media (max-width: 900px) {
+.btn {
+  font-size: 14px;
+}
 }
