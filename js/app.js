@@ -42,43 +42,35 @@ backgroundState = document.body.style.backgroundImage = "url('../assets/XDjgmZ.p
 // document.body.style.backgroundImage = "url('../assets/dark-forest.jpg')"
 // document.body.style.backgroundImage = "url('../assets/stream-pic.png')"
 // document.body.style.backgroundImage = "url('../assets/bar-pic.png')"
-                      function showTextNode(textNodeIndex) {
-                        const textNode = textNodes.find(textNode => textNode.id === textNodeIndex)
-                        textElement.innerText = textNode.text
-                        while (optionButtonsElement.firstChild) {
-                          optionButtonsElement.removeChild(optionButtonsElement.firstChild)
-                        }
-                        textNode.options.forEach(option => {
-                          if (showOption(option)) {
-                            const button = document.createElement('button')
-                            button.innerText = option.text
-                            button.classList.add('btn')
-                            button.addEventListener('click', () => selectOption(option))
-                            optionButtonsElement.appendChild(button)
-                          }
-                        })
-                        }
-                        function showOption(option) {
-                          return option.requiredState == null || option.requiredState(state)
-                        }
-    // function showIcon(icon) {
-      // }
-      function selectOption(option) {
-        const nextTextNodeId = option.nextText 
-        if (nextTextNodeId === -1){
-          startGame()
-        }
-        state = Object.assign(state, option.setState)
-        showTextNode(nextTextNodeId)
-        optionNoise.volume = .05
-        optionNoise.play()
-      }
-
-// optionButtonsElement.addEventListener("click", function() {
-//   if (textNodes[i].id > 4) {
-//     backgroundState = document.body.style.backgroundImage = "url('../assets/dark-forest.jpg')"
-//   }
-// })
+function showTextNode(textNodeIndex) {
+  const textNode = textNodes.find(textNode => textNode.id === textNodeIndex)
+  textElement.innerText = textNode.text
+  while (optionButtonsElement.firstChild) {
+    optionButtonsElement.removeChild(optionButtonsElement.firstChild)
+  }
+  textNode.options.forEach(option => {
+    if (showOption(option)) {
+      const button = document.createElement('button')
+      button.innerText = option.text
+      button.classList.add('btn')
+      button.addEventListener('click', () => selectOption(option))
+      optionButtonsElement.appendChild(button)
+    }
+  })
+  }
+function showOption(option) {
+  return option.requiredState == null || option.requiredState(state)
+}
+function selectOption(option) {
+  const nextTextNodeId = option.nextText 
+  if (nextTextNodeId === -1){
+    startGame()
+  }
+  state = Object.assign(state, option.setState)
+  showTextNode(nextTextNodeId)
+  optionNoise.volume = .05
+    optionNoise.play()
+}
 const textNodes = [
 {
     id: 1,

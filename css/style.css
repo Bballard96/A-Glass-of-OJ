@@ -106,32 +106,6 @@ body {
   margin-bottom: 1em;
 } 
 
-/* #start-button {
-  background-color: white;
-  color: black;
-  padding: 1em 2em;
-  font-size: 2em;
-  border: none;
-  cursor: pointer;
-  border-radius: 50px;
-} */
-/* #start-button {
-  background-color: white;
-  color: black;
-  padding: 1em 2em;
-  font-size: 2em;
-  border: none;
-  cursor: pointer;
-  border-radius: 50px;
-} */
-
-/* #start-button:hover, #start-button:focus, #start-button:active {
-  border-color: #C8B6A6;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  -webbkit-transform: scale(1.1);
-  transform: scale(1.1);
-}   */
-
 #button-7 {
   position: relative;
   overflow: hidden;
