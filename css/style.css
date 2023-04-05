@@ -83,15 +83,7 @@ body {
   height: 20px;
   width: 25px;
 }
-/* .flashlight {
-  size: 50px;
-} */
 
-/* #text {
-  display: inline-block;
-  animation: animate__animated animate__slideInDown;
-  animation: 2s;
-} */
 
 #intro-overlay {
   position: absolute;
@@ -114,7 +106,7 @@ body {
   margin-bottom: 1em;
 } 
 
-#start-button {
+/* #start-button {
   background-color: white;
   color: black;
   padding: 1em 2em;
@@ -122,29 +114,42 @@ body {
   border: none;
   cursor: pointer;
   border-radius: 50px;
-}
+} */
+/* #start-button {
+  background-color: white;
+  color: black;
+  padding: 1em 2em;
+  font-size: 2em;
+  border: none;
+  cursor: pointer;
+  border-radius: 50px;
+} */
 
-#start-button:hover, #start-button:focus, #start-button:active {
+/* #start-button:hover, #start-button:focus, #start-button:active {
   border-color: #C8B6A6;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   -webbkit-transform: scale(1.1);
   transform: scale(1.1);
-} 
+}   */
 
-
-/* #start-button {
+#button-7 {
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  border-radius: 30px;
+  padding: 1em 2em;
+  font-size: 2em;
+  background-color: white;
 }
 
-#start-button a {
+#button-7 a {
   position: relative;
   left: 0;
   transition: all .35s ease-Out;
+  color: black;
 }
 
-#start-button {
+#dub-arrow {
   width: 100%;
   height: 100%;
   background: #BFC0C0;
@@ -158,15 +163,15 @@ body {
   bottom: 0;
 }
 
-#start-button img {
+#button-7 img {
   width: 20px;
   height: auto;
 }
 
-#start-button:hover #start-button {
+#button-7:hover #dub-arrow {
   left: 0;
 }
 
-#start-button:hover a {
+#button-7:hover a {
   left: 150px;
-} */
+}

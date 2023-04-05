@@ -8,7 +8,7 @@
 let state = {}
 let itemIcon = document.getElementById("item-icon");
 let introOverlay = document.getElementById("intro-overlay");
-let startButton = document.getElementById("start-button");
+let startButton = document.getElementById("button-7");
 let gameContainer = document.getElementById("game-container");
 const playButton = document.getElementById('.btn')
 const startSound = document.getElementById("StartButton")
@@ -16,7 +16,7 @@ const startNoise = new Audio("../audio/startGame.mp3")
 const optionSound = document.querySelector(".btn")
 const optionNoise = new Audio("../audio/skill.mp3")
 
-// const forestButton = document.getElementById("forest")
+
 let backgroundState 
 
 
