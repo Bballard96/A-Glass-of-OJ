@@ -1,15 +1,22 @@
+// import { textNodes } from "./Storyline-data.js";
+
 let state = {}
-let itemIcon = document.getElementById("item-icon");
 let introOverlay = document.getElementById("intro-overlay");
 let startButton = document.getElementById("button-7");
 let gameContainer = document.getElementById("game-container");
 const playButton = document.getElementById('.btn')
-const startSound = document.getElementById("StartButton")
 const startNoise = new Audio("../audio/startGame.mp3")
 const optionSound = document.querySelector(".btn")
-const optionNoise = new Audio("../audio/skill.mp3")
+// const optionNoise = new Audio("../audio/skill.mp3")
 const introSound = new Audio("../audio/pouring.mp3")
+const textElement = document.getElementById('text')
+const optionButtonsElement = document.getElementById('option-buttons')
 
+const sounds = [
+  new Audio("../audio/option1.mp3"),
+  new Audio("../audio/option2.mp3"),
+  new Audio("../audio/skill.mp3")
+]
 
 
 let backgroundState 
@@ -24,15 +31,15 @@ startButton.addEventListener("click", function() {
   introSound.play()
 })
 
-const textElement = document.getElementById('text')
-const optionButtonsElement = document.getElementById('option-buttons')
-
 
 function startGame() {
 state = {}
 showTextNode(1)
 backgroundState = document.body.style.backgroundImage = "url('../assets/XDjgmZ.png')";
 }
+
+function render(){
+  startGame()}
 
 function showTextNode(textNodeIndex) {
   const textNode = textNodes.find(textNode => textNode.id === textNodeIndex)
@@ -60,9 +67,13 @@ function selectOption(option) {
   }
   state = Object.assign(state, option.setState)
   showTextNode(nextTextNodeId)
-  optionNoise.volume = .05
-  optionNoise.play()
+  let sound = sounds[Math.floor(Math.random() * sounds.length)]
+  sound.volume = .03
+  sound.play()
+  // optionNoise.volume = .02
+  // optionNoise.play()
 }
+
 const textNodes = [
   {
     id: 1,
@@ -83,7 +94,6 @@ const textNodes = [
       }
     ]
   },
-  // STEP 2
   {
     id: 2,
     text: "Ah refreshing! Guessing you should get up, get out and see if you can retrace your steps. It Looks like you are still in your clothes from yesterday. You should shower and put on something new what'll it be?",
@@ -380,6 +390,8 @@ const textNodes = [
       },
     ]
   },
-
 ]
-startGame()
+
+
+
+render()

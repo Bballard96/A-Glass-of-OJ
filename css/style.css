@@ -145,3 +145,9 @@ body {
 #button-7:hover a {
   left: 150px;
 }
+
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+}
