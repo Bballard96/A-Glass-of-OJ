@@ -306,7 +306,7 @@ const textNodes = [
     },
     {
       id: 60,
-      text: "A glass of Oj. Can never go wrong.",
+      text: "A glass of OJ. Can never go wrong.",
       options: [
         {
           text: "You Win! Restart",
