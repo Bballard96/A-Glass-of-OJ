@@ -1,4 +1,4 @@
-# CYOA - "A Glass of Oj"
+# "A Glass of Oj"
 ## My game is a "Choose your own adventure game" titled "A Glass of OJ."
  ### - The game is about the player themselves in a situation where they wake up after a night of intense inebriation and realize their wallet is gone. You've got to make choices to retrace your steps and find the last place you think you might have left your wallet.
 ### - One of the reasons I chose the "Choose your own Adventure" game option is because I love video games a lot myself, and games that allow you to make choices that change or impact the story in some way. If done correctly, the player feels they impacted the world, and their experiences are all unique and different.
