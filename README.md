@@ -28,7 +28,7 @@
 
 ### IMAGES: 
 
-- #### [Favicons here]("https://www.favicon.cc")
+- #### [Favicons]("https://www.favicon.cc")
 
 - #### [Background image](https://i.ytimg.com/vi/QVEBrnlCDik/maxresdefault.jpg)
 
