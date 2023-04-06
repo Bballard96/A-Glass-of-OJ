@@ -7,7 +7,6 @@ let gameContainer = document.getElementById("game-container");
 const playButton = document.getElementById('.btn')
 const startNoise = new Audio("../audio/startGame.mp3")
 const optionSound = document.querySelector(".btn")
-// const optionNoise = new Audio("../audio/skill.mp3")
 const introSound = new Audio("../audio/pouring.mp3")
 const textElement = document.getElementById('text')
 const optionButtonsElement = document.getElementById('option-buttons')
