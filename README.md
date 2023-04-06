@@ -8,26 +8,28 @@ Play the game HERE: https://lucent-duckanoo-b36e0a.netlify.app
 Instructions: Select one of choices to progress story. Enjoy 😎
 
 
-Attributions: 
+ATTRIBUTIONS: 
 
-  Audio: 
+  AUDIO: 
 
-  INTRO SOUND EFFECT: https://youtu.be/6rYbOOU3tes
+  Intro sound effect: https://youtu.be/6rYbOOU3tes
 
-  BUTTON PRESS SOUND EFFECT: https://youtu.be/tVJmvlNf_wk
+  Button press sound effect: https://youtu.be/tVJmvlNf_wk
 
-Images: 
+IMAGES: 
 
   favicon images are from "favicon.cc"
 
-  BACKGROUND IMAGE: https://i.ytimg.com/vi/QVEBrnlCDik/maxresdefault.jpg
+  Background image: https://i.ytimg.com/vi/QVEBrnlCDik/maxresdefault.jpg
 
 Animations:  https://alvarotrigo.com/blog/10-cool-css-animations-to-add-to-your-website/
 
-Technologies used: CSS, JavaScript, HTML
+TECHNOLOGIES USED: CSS, JavaScript, HTML
 
 
 Next steps: Get background to change on certain checkpoints, Add story paths to make story longer, Add favicon icon for inventory to show what items player currently holds in inventory.
+
+SCREENSHOTS:
 
 ![](url("../assets/screenshot1.png"))
 
