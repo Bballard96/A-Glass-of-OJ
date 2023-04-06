@@ -30,9 +30,9 @@ startButton.addEventListener("click", function() {
 
 
 function startGame() {
-state = {}
-showTextNode(1)
-backgroundState = document.body.style.backgroundImage = "url('../assets/XDjgmZ.png')";
+  state = {}
+  showTextNode(1)
+  backgroundState = document.body.style.backgroundImage = "url('../assets/XDjgmZ.png')";
 }
 
 function render(){

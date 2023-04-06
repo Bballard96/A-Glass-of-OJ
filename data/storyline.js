@@ -1,23 +1,23 @@
 const textNodes = [
-  {
-    id: 1,
-    text: "You slowly begin to regain consciousness and awake from your drunken stupor. You arise from the floor, and after rubbing your eyes and squinting intensely, you immediately pat all of your pockets naturally and realize you've lost your wallet. You need to find it before it's too late. You also realize your very parch. For the moment this takes priority. What do you grab to quench your thirst?",
-    options: [
-      {
-        text: 'Water.',
-        nextText: 2,
-      },
-      {
-        text: 'Orange juice.',
-        setState: { orangeJuice: true },
-        nextText: 2.2
-      },
-      {
-        text: '6 shots of whatever is closest!!',
-        nextText: 50
-      }
-    ]
-  },
+    {
+      id: 1,
+      text: "You slowly begin to regain consciousness and awake from your drunken stupor. You arise from the floor, and after rubbing your eyes and squinting intensely, you immediately pat all of your pockets naturally and realize you've lost your wallet. You need to find it before it's too late. You also realize your very parch. For the moment this takes priority. What do you grab to quench your thirst?",
+      options: [
+        {
+          text: 'Water.',
+          nextText: 2,
+        },
+        {
+          text: 'Orange juice.',
+          setState: { orangeJuice: true },
+          nextText: 2.2
+        },
+        {
+          text: '6 shots of whatever is closest!!',
+          nextText: 50
+        }
+      ]
+    },
     {
       id: 2,
       text: "Ah refreshing! Guessing you should get up, get out and see if you can retrace your steps. It Looks like your still in your clothes from yesterday. You should shower and put on something new what'll it be?",
@@ -304,7 +304,7 @@ const textNodes = [
         },
       ]
     },
-  {
+    {
       id: 60,
       text: "A glass of Oj. Can never go wrong.",
       options: [
