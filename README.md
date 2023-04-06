@@ -31,6 +31,9 @@ Next steps: Get background to change on certain checkpoints, Add story paths to 
 
 SCREENSHOTS:
 
-![](url("../assets/screenshot1.png"))
 
-![](url("../assets/screenshot2.png"))
+
+
+![screenshot1](https://user-images.githubusercontent.com/110790998/230401685-090fa7c5-34b0-4fc6-beab-c3c145ea98f7.png)
+
+![screenshot2](https://user-images.githubusercontent.com/110790998/230401699-b08223a3-15f9-4b32-a479-0927d441f232.png)
