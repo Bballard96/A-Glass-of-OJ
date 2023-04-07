@@ -30,6 +30,8 @@
 
 - #### [Favicons]("https://www.favicon.cc")
 
+- #### [Other favicons](https://fontawesome.com/)
+
 - #### [Background image](https://i.ytimg.com/vi/QVEBrnlCDik/maxresdefault.jpg)
 
 ## Animation:  
