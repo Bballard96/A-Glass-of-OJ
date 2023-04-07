@@ -16,7 +16,7 @@
 ## [PLAY HERE](https://lucent-duckanoo-b36e0a.netlify.app)
 
 ## Instructions: 
-- ### Select one of choices to progress story. There are even a few easter eggs to look for and see if you can find them all. Enjoy 😎
+- ### Select one of choices to progress story. There are even a few easter eggs to look for. See if you can find them all! Enjoy 😎
 
 ## ATTRIBUTIONS:
 
