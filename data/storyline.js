@@ -213,7 +213,7 @@ const textNodes = [
       text: "It's a flask filled with your favorite bourbon.",
       options: [
         {
-          text: "Drink every last drop of strangers alcohol that we found at the bottom of this river. A great idea!",
+          text: "Of course I will consume strangers alcohol that I found at the bottom of this river. A great idea!",
           nextText: 50.1
         },
         {
