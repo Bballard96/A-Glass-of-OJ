@@ -149,7 +149,7 @@ const textNodes = [
       options: [
         {
         text: 'Use a flashlight to illuminate the path ahead and proceed down.',
-        requiredState: (currentState) => currentState.flashLight,
+        requiredState: (currentState) => currentState,flashLight,
         nextText: 8
         },
         {
@@ -160,6 +160,7 @@ const textNodes = [
     },
     {
       id: 6,
+      text: 'You walk along the path for a minute or two before approaching a single large tree with a large handle.',
       text: 'You walk along the path for a minute or two before approaching a single large tree with a large handle.',
       options: [
         {
