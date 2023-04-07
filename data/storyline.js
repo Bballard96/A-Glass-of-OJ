@@ -149,7 +149,7 @@ const textNodes = [
       options: [
         {
         text: 'Use a flashlight to illuminate the path ahead and proceed down.',
-        requiredState: (currentState) => currentState,flashLight,
+        requiredState: (currentState) => currentState.flashLight,
         nextText: 8
         },
         {
