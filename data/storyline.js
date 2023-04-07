@@ -161,7 +161,6 @@ const textNodes = [
     {
       id: 6,
       text: 'You walk along the path for a minute or two before approaching a single large tree with a large handle.',
-      text: 'You walk along the path for a minute or two before approaching a single large tree with a large handle.',
       options: [
         {
           text: 'Pull handle?',
