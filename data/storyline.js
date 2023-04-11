@@ -1,7 +1,7 @@
 const textNodes = [
     {
       id: 1,
-      text: "You slowly begin to regain consciousness and awake from your drunken stupor. You arise from the floor, and after rubbing your eyes and squinting intensely, you immediately pat all of your pockets naturally and realize you've lost your wallet. You need to find it before it's too late. You also realize your very parch. For the moment this takes priority. What do you grab to quench your thirst?",
+      text: "You slowly begin to regain consciousness and awake from your drunken stupor. You arise from the floor, and after rubbing your eyes and squinting intensely, you immediately pat all of your pockets naturally and realize you've lost your wallet. You need to find it before it's too late. You also realize you're very parched. For the moment this takes priority. What do you grab to quench your thirst?",
       options: [
         {
           text: 'Water',
@@ -20,7 +20,7 @@ const textNodes = [
     },
     {
       id: 2,
-      text: "Ah refreshing! Guessing you should get up, get out and see if you can retrace your steps. It Looks like your still in your clothes from yesterday. You should shower and put on something new what'll it be?",
+      text: "Ah refreshing! Guessing you should get up, get out and see if you can retrace your steps. It Looks like you are still in your clothes from yesterday. You should shower and put on something new what'll it be?",
       options: [ 
         {
         text: 'Check weather by stepping outside first',
@@ -39,7 +39,7 @@ const textNodes = [
     },
     {
       id: 2.2,
-      text: "Ah refreshing! You can never go wrong with some good ol' Oj. Guessing you should get up, get out and see if you can retrace your steps, although it looks like you're still in your clothes from yesterday. You should shower and put on something new what'll it be?",
+      text: "Ah refreshing! You can never go wrong with some good ol' Oj. Guessing you should get up, get out, and see if you can retrace your steps, although it looks like you're still in your clothes from yesterday. You should shower and put on something new what'll it be?",
       options: [ 
         {
         text: 'Check weather by stepping outside first',
@@ -190,7 +190,7 @@ const textNodes = [
     {
       id: 7,
       styling: 'stream',
-      text: 'It looks like you stumble upon a small stream with something shiny beneath the surface.',
+      text: 'You stumble upon a small stream with something shiny beneath the surface.',
       options: [
         {
           text: "Reach down and pick up whatever item this is",
@@ -247,7 +247,7 @@ const textNodes = [
     },
     {
       id: 10,
-      text: `You step inside, and it seems we've arrived at a bar. We approach the bar to sit down. It's all coming back to you now! The bartender turns around, notices you, and as he's cleaning his glass, stops and says: "Hey I recognize you! You left your wallet last night."`,
+      text: `You step inside, and it seems we've arrived at a bar. We approach the bar to sit down. It's all coming back to you now! The bartender turns around, notices you as he's cleaning his glass, stops, and says: "Hey, I recognize you! You left your wallet last night."`,
       options: [
         {
           text: `*Grab Wallet*`,
@@ -257,10 +257,10 @@ const textNodes = [
     },
     {
       id: 11,
-      text: `"Look We can't have another night like last night so take it easy today if you are thinking about drinking. What'll it be?"`,
+      text: `"Look, the bar can't have another night like last night, so take it easy today if you are thinking about drinking. What'll it be?"`,
       options: [
         {
-          text: `Take his advice to heart. "You're right. I'll just have a glass of water and be on my way."`,
+          text: `Take his advice to heart. "You're right. I'll have a glass of water and be on my way."`,
           nextText: 12
         },
         {
@@ -268,7 +268,7 @@ const textNodes = [
           nextText: 50.2
         },
         {
-        text: "Yeah you're right. I actually just had some orange juice this morning still working on getting rid of this hangover. I'll just take a glass of Oj. It's my favorite.",
+        text: "Yeah, you're right. I just had some orange juice this morning still working on getting rid of this hangover. I'll take a glass of Oj. It's my favorite.",
         requiredState: (currentState) => currentState.orangeJuice,
         nextText: 60,
         }
@@ -296,7 +296,7 @@ const textNodes = [
     },
     {
       id: 50.2,
-      text: "As everything begins to get fuzzy and you leave it up to the bar staff and ongoers to decide how they're going to get rid of you once again. Right before you collapse after taking one too many drinks you realize you have failed yourself and everyone around you by falling to the temptations of liquor once again and leaving your wallet on the bar counter. ",
+      text: "As everything gets fuzzy, you leave it up to the bar staff and on-goers to decide how to get rid of you again. Right before you collapse after taking too many drinks, you realize you have failed yourself and everyone around you by falling to the temptations of liquor again and leaving your wallet on the bar counter. ",
       options: [
         {
           text: "You Lose. Restart.",
