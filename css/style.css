@@ -61,7 +61,6 @@ body {
   background-color: #A4907C ;
   border-radius: 5px;
   padding: 5px 10px;
-  /* color: #F1DEC9; */
   font-family: 'Roboto Condensed';
   align-items: center;
   justify-content: center;
@@ -148,13 +147,23 @@ body {
 
 @media (max-width: 900px) {
   #text {
-    font-size: 15px;
-
+    font-size: 20px;
+    margin-bottom: 1px;
   }
+  .btn-grid {
+    margin-top: 0;
+  }
+  .container {
+    height: 360px;
+  }
+
+
 }
 @media (max-width: 900px) {
 .btn {
-  font-size: 14px;
+  font-size: 20px;
+  width: 400px;
+  margin-bottom: 90px;
+  margin-top: 40px;
 }
 }
-
