@@ -156,14 +156,23 @@ body {
   .container {
     height: 360px;
   }
-
-
+  .btn {
+    font-size: 19px;
+    width: 400px;
+    margin-bottom: 90px;
+    margin-top: 40px;
+  }
 }
-@media (max-width: 900px) {
-.btn {
-  font-size: 20px;
-  width: 400px;
-  margin-bottom: 90px;
-  margin-top: 40px;
-}
+
+@media (max-width: 650px) {
+  #text {
+    font-size: 18px;
+  }
+  .btn-grid {
+    /* font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1px; */
+    /* width: 100px; */
+  }
 }
